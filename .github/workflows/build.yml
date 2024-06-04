@@ -1,0 +1,68 @@
+# This is a basic workflow that is manually triggered
+
+name: Build
+
+on:
+  workflow_dispatch: # This triggers the workflow manually
+    inputs:
+      environment_name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'environment name'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: choice
+        options:
+        - sandbox
+        - staging
+        - production
+      version_update_type:
+        description: 'update type'
+        required: true
+        type: choice
+        options:
+        - rc
+        - dev
+        - post
+        - patch
+        - newversion
+
+env:
+  CONTAINER_NAME_FLASK: ${{ vars.MODULE_PREFIX }}-flask
+                                                # containerDefinitions section of your task definition
+
+                                                       
+
+jobs:
+  generate-changelog:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install towncrier incremental
+
+    - name: Upgrade version
+      run: |
+        python -m incremental.update app --patch
+      
+    - name: Generate Changelog
+      run: towncrier build --yes
+    
+    - name: Commit Changelog
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add CHANGELOG.md
+        git commit -m "Update changelog [skip ci]"
+        git push origin main
+
