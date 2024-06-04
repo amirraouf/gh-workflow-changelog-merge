@@ -49,7 +49,7 @@ jobs:
     - name: Get application Version
       id: appVersion
       run: |
-        echo "version=$(python app/_version.py)" >> "$GITHUB_ENV"
+        echo "version=$(python app/_version.py)" >> $GITHUB_ENV
 
     - name: Generate Changelog
       run: towncrier build --yes --version=${{ env.version }}
