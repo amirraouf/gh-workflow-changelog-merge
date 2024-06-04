@@ -4,6 +4,8 @@ name: Build
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch: # This triggers the workflow manually
     inputs:
       version_update_type:
@@ -44,7 +46,7 @@ jobs:
 
     - name: Upgrade version
       run: |
-        python -m incremental.update app --patch
+        python -m incremental.update app --${{ inputs.environment_name }}
     
     - name: Get application Version
       id: appVersion
