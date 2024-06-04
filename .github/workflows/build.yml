@@ -60,7 +60,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add CHANGELOG.md
+        git add CHANGELOG.md app/_version.py
         git commit -m "Update changelog [skip ci]"
         git push origin ${{env.BRANCH_NAME}}
 
