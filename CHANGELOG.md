@@ -1,3 +1,19 @@
+## [](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/) - 2024-06-04
+
+
+### Removed
+
+- Remove a bad feature ([#100](https://angeiongroup.atlassian.net/browse/SOPS-100))
+
+### Added
+
+- Added a cool feature ([#100](https://angeiongroup.atlassian.net/browse/SOPS-100))
+
+### Fixed
+
+- fix this cool feature ([#100](https://angeiongroup.atlassian.net/browse/SOPS-100))
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
