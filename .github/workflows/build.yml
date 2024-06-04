@@ -3,19 +3,9 @@
 name: Build
 
 on:
+  push:
   workflow_dispatch: # This triggers the workflow manually
     inputs:
-      environment_name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'environment name'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: choice
-        options:
-        - sandbox
-        - staging
-        - production
       version_update_type:
         description: 'update type'
         required: true
@@ -27,22 +17,20 @@ on:
         - patch
         - newversion
 
-env:
-  CONTAINER_NAME_FLASK: ${{ vars.MODULE_PREFIX }}-flask
-                                                # containerDefinitions section of your task definition
-
-                                                       
 
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: '3.x'
 
