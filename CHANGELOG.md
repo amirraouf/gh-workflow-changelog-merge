@@ -1,3 +1,15 @@
+## [0.95.2](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/0.95.2) - 2024-06-04
+
+
+### Added
+
+- Added a cool feature ([#101](https://angeiongroup.atlassian.net/browse/SOPS-101))
+
+### Fixed
+
+- fix this cool feature ([#101](https://angeiongroup.atlassian.net/browse/SOPS-101))
+
+
 ## [](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/) - 2024-06-04
 
 
