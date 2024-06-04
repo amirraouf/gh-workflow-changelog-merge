@@ -54,7 +54,7 @@ jobs:
     - name: Generate Changelog
       env:
         SELECTED_VERSION: ${{ steps.appVersion.outputs.version }}
-      run: towncrier build --yes --version=$SELECTED_VERSION
+      run: towncrier build --yes --version=0.95.5
     
     - name: Commit Changelog
       run: |
