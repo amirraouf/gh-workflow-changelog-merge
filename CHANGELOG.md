@@ -43,17 +43,3 @@ Types of changes
 - Updated idna to version 3.7
 - Updated pymysql to version 1.1.1
 
-## [0.95.3] - 2024-05-24
-### Fixed
-- Fraud counts missing from the dashboard
-- Query in SecuritiesClaim where it was joining all on master_claim_id = claim.id which doesn't work for legacy cases and creates incorrect joins
-- Uncaught exception if user is not logged in on UserAccessObj
-- Issue where SecuritiesClaim was triggering a check on exported at due to partial match on `Claim+`
-
-## [0.95.2] - 2024-05-23
-### Changed
-- Permissions to Organizations to allow Leadership role to also be able to edit
-
-## [0.95.1] - 2024-05-23
-### Fixed
-- Update form field bug impacting changing fields
