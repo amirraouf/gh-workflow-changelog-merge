@@ -63,7 +63,7 @@ jobs:
     - name: Get application Version
       id: appVersion
       run: |
-        export APP_VERSION=$(python test.py)
+        export APP_VERSION=$(python app/_version.py)
         echo appVersion=$APP_VERSION >> "$GITHUB_OUTPUT"
 
     - name: Generate Changelog
