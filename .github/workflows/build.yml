@@ -20,6 +20,10 @@ on:
         description: 'version needed to jump too - not required if patch is chosen'
         required: false
         type: string
+      release_new_tag:
+        description: 'Choice to release new tag or just merge to main'
+        required: true
+        type: boolean
 
 env:
   BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
@@ -73,7 +77,21 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add CHANGELOG.md app/_version.py
-        git commit -m "Update changelog [skip ci]"
-        git push origin ${{env.BRANCH_NAME}}
-
+        if [[ "${{inputs.release_new_tag}}" == "true" ]]; then
+          git tag ${{ steps.appVersion.outputs.appVersion }}
+          git push origin ${{ steps.appVersion.outputs.appVersion }}
+        else
+          git add CHANGELOG.md app/_version.py
+          git commit -m "Update changelog [skip ci]"
+          git push origin ${{env.BRANCH_NAME}}
+        fi
+    - name: Create GitHub Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.appVersion.outputs.appVersion }}
+        release_name: Release ${{ steps.appVersion.outputs.appVersion }}
+        body: https://github.com/amirraouf/gh-workflow-changelog-merge/blob/main/CHANGELOG.md#9910---2024-06-05
+        draft: false
+        prerelease: false
