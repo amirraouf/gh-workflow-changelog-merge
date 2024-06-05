@@ -27,6 +27,9 @@ env:
 
 jobs:
   generate-changelog:
+    outputs:
+      appVersion: ${{ steps.appVersion.outputs.appVersion }}
+    
     runs-on: ubuntu-latest
     strategy:
       matrix:
