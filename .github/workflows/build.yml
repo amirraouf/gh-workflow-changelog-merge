@@ -50,7 +50,7 @@ jobs:
       run: |
         if [[ "${{ inputs.version_update_type }}" == "newversion" ]]; then
             echo "Running updating version to new specific version"
-            python -m incremental.update app --newversion=${{ inputs.version_update_type }}
+            python -m incremental.update app --newversion=${{ inputs.new_version }}
           else
             echo "Running default command"
             python -m incremental.update app --${{ inputs.version_update_type }}
