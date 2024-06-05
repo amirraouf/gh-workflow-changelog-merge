@@ -64,7 +64,7 @@ jobs:
       id: appVersion
       run: |
         export APP_VERSION=$(python get_version.py)
-        echo appVersion=$APP_VERSION
+        echo appVersion=$APP_VERSION >> "$GITHUB_OUTPUT"
 
     - name: Generate Changelog
       run: towncrier build --yes --version=${{ steps.appVersion.outputs.appVersion }}
