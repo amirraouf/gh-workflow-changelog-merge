@@ -48,7 +48,14 @@ jobs:
 
     - name: Upgrade version
       run: |
-        python -m incremental.update app --${{ inputs.environment_name }}
+        if [[ "${{ inputs.version_update_type }}" == "newversion" ]]; then
+            echo "Running updating version to new specific version"
+            python -m incremental.update app --newversion=${{ inputs.version_update_type }}
+          else
+            echo "Running default command"
+            python -m incremental.update app --${{ inputs.version_update_type }}
+          fi
+        
     
     - name: Get application Version
       id: appVersion
