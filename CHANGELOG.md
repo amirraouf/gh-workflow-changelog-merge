@@ -1,3 +1,14 @@
+## [9.9.11](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/9.9.11) - 2024-06-06
+
+
+### Added
+
+- - Remove data
+  - Add data
+
+  ([#300](https://angeiongroup.atlassian.net/browse/SOPS-300))
+
+
 ## [9.9.10](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/9.9.10) - 2024-06-05
 
 
