@@ -84,7 +84,9 @@ jobs:
           git push origin ${{ steps.appVersion.outputs.appVersion }}
         fi
         git push origin ${{env.BRANCH_NAME}}
+    
     - name: Create GitHub Release
+      if: ${{inputs.release_new_tag}}
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
