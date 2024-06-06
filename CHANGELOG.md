@@ -1,3 +1,19 @@
+## [55.5.2](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/55.5.2) - 2024-06-06
+
+
+### Removed
+
+- remove anything ([#242](https://angeiongroup.atlassian.net/browse/SOPS-242))
+
+### Deprecated
+
+- deprecate anything ([#242](https://angeiongroup.atlassian.net/browse/SOPS-242))
+
+### Added
+
+- adding new breaking line to print ([#323](https://angeiongroup.atlassian.net/browse/SOPS-323))
+
+
 ## [10.3.0](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/10.3.0) - 2024-06-06
 
 
