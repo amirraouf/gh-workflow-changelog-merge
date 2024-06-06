@@ -1,3 +1,9 @@
+## [10.3.0](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/10.3.0) - 2024-06-06
+
+
+No significant changes.
+
+
 ## [9.9.12](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/9.9.12) - 2024-06-06
 
 
