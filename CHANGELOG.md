@@ -1,3 +1,19 @@
+## [30.9.0](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/30.9.0) - 2024-06-07
+
+
+### Removed
+
+- remove cool anything ([#12](https://angeiongroup.atlassian.net/browse/SOPS-12), [#13](https://angeiongroup.atlassian.net/browse/SOPS-13))
+
+### Deprecated
+
+- deprecate unused anything ([#13](https://angeiongroup.atlassian.net/browse/SOPS-13))
+
+### Added
+
+- add cool anything ([#12](https://angeiongroup.atlassian.net/browse/SOPS-12))
+
+
 ## [55.5.2](https://github.com:amirraouf/gh-workflow-changelog-merge/tree/55.5.2) - 2024-06-06
 
 

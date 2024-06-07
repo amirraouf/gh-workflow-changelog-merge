@@ -7,5 +7,5 @@ Provides app version information.
 
 from incremental import Version
 
-__version__ = Version("app", 55, 5, 2)
+__version__ = Version("app", 30, 9, 0)
 __all__ = ["__version__"]
